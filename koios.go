@@ -314,7 +314,7 @@ func (s *Slot) UnmarshalJSON(b []byte) error {
 	if raw == "null" || raw == "" {
 		return nil
 	}
-	v, err := strconv.ParseUint(raw, 10, 64)
+	v, err := strconv.ParseUint(raw, 10, strconv.IntSize)
 	if err != nil {
 		return fmt.Errorf("slot: %w", err)
 	}
